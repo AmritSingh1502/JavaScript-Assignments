@@ -25,8 +25,31 @@
   - `npm run test-countVowels`
 */
 
+function checkVowel(str)
+{
+  const vowels = ['a', 'e','i','o','u'];
+  const lower = str.toLowerCase();
+
+  for(const char of lower)
+  {
+    if(vowels.includes(char))
+    {
+      return true;
+    }
+  }
+  return false;
+}
+
 function countVowels(str) {
-  // Your code here
+  let count = 0;
+  for( let i = 0; i< str.length; i++)
+  {
+    if(checkVowel(str[i]))
+    {
+      count++;
+    }
+  }
+  return count;
 }
 
 module.exports = { countVowels };

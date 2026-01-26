@@ -18,8 +18,24 @@
   - `npm run test-reverseString`
 */
 
+function swap(arr ,index1 , index2)
+{
+  let temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
+}
+
 function reverseString(str) {
-  // Your code here
+  let arr = str.split('');
+  let s = 0;
+  let e = str.length - 1;
+
+  while(s < e){
+    swap(arr, s , e)
+    s++;
+    e--;
+  }
+  return arr.join('');
 }
 
 module.exports = reverseString;
