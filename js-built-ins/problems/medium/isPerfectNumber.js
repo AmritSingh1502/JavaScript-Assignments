@@ -26,7 +26,22 @@
 */
 
 function isPerfectNumber(num) {
-  // Your code here
+  if(num <= 1) return false;
+
+  const maxD= Math.floor(num/2);
+
+  // const sum = Array.from({ length: maxD },(_, i) => i+1).filter(i => num % i === 0).reduce((total, current)=> total + current, 0)
+
+  // return sum === num;
+
+  let sum = 0;
+  for(let i = 1; i<= maxD ; i++){
+     if(num % i == 0){
+      sum = sum + i;
+     }
+  }
+
+  return sum === num;
 }
 
 module.exports = { isPerfectNumber };

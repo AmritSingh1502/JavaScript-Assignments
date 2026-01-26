@@ -20,7 +20,26 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-nonrepeat`
 */
+
 function nonrepeat(str) {
-  // Your code here
+  const ans = {};
+
+  for(let i =0; i < str.length ; i++){
+    if(ans[str[i]]){
+      ans[str[i]]++;
+    }else{
+      ans[str[i]] = 1;
+    }
+  }
+
+  for(let i =0 ; i<str.length; i++){
+    if(ans[str[i]] == 1)
+    {
+      return str[i];
+
+    }
+  }
+  return null;
 }
+
 module.exports = nonrepeat;
