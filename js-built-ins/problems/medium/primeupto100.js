@@ -14,9 +14,34 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-prime`
 */
+function isPrime(num)
+{
+  if( num <= 1) return false;
+
+  for(let i = 2 ; i <= Math.sqrt(num); i++)
+  {
+    if(num % i === 0)
+    {
+      return false;
+    }
+  }
+
+  return true;
+}
 
 function getPrimesUpTo100() {
   // Your code here
+  const ans = [];
+
+  for(let i = 2 ; i <= 100 ; i++)
+  {
+    if(isPrime(i))
+    {
+      ans.push(i);
+    }
+  }
+
+  return ans;
 }
 
 module.exports = { getPrimesUpTo100 };
