@@ -19,7 +19,12 @@
 */
 
 function getUniqueElements(arr) {
-  // Your code here
+  // let result = arr.filter((e, i , self) => i === self.indexOf(e));
+  // return result;
+
+ let s = new Set(arr);
+ let result = [...s];
+  return result;
 }
 
 module.exports = getUniqueElements;
